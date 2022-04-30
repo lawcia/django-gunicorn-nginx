@@ -1,0 +1,15 @@
+server {
+    listen 8000;
+    server_name 0.0.0.0;
+
+    error_log /vagrant/log/nginx-error.log;
+
+location /static/ {
+    root /vagrant/myproject/static/;
+}
+
+location / {
+    proxy_set_header Host $http_host;
+    proxy_pass http://unix:/home/vagrant/myproject.sock;
+    }
+}
