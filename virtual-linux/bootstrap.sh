@@ -17,11 +17,8 @@ sudo cp /vagrant/conf/myproject_nginx /etc/nginx/sites-available/myproject
 sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
 
 
-# setup and start supervisor to manage gunicorn & nginx process
-# sudo su
-
+# setup and start supervisor to manage gunicorn
 sudo django_env/bin/echo_supervisord_conf > /etc/supervisord.conf
-
 cat /vagrant/conf/myproject_gunicorn.conf >> /etc/supervisord.conf
 django_env/bin/supervisord
 
