@@ -1,0 +1,4 @@
+.vagrant
+__pycache__
+log/*
+db.sqlite3
